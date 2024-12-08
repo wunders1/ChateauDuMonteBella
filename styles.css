@@ -1,0 +1,14 @@
+
+
+.nav-container {
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.nav-menu-items {
+    display: flex;
+    flex-direction: column;
+}
+
