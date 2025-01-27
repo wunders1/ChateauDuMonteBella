@@ -1,89 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b09698dc4b.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </head>
+
 <body>
     <div class="page-wrapper">
-        <div class="main-wrapper">
-            <section class="navigation">
+        <section class="navigation" id="navigation-section">
             <div class="nav-container">
                 <a href="" class="nav-brand">Chateau de Monte Bella</a>
-                <nav class="nav-menu">
-                    <div class="nav-menu-items">
-                        <a href="" class="nav-link">Overview</a>
-                        <a href="" class="nav-link">Gallery</a>
-                        <a href="" class="nav-link">Plans</a>
-                        <a href="" class="nav-link">Location</a>
-                        <a href="" class="nav-link">Features</a>
-                    </div>
-                    <div class="nav-menu-button">
-                        <button class="btn-contact">Contact</button>
-                    </div>
-                </nav>
+                <a href="javascript:void(0);" class="icon nav-icon" id="showMenuBnt" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
-            </section>
-            <section class="hero">
-            <div class="hero-background">
-
-            </div>
-            <div class="hero-info-container">
-                <div class="hero-column">
-                    <div class="hero-title">
-                        <h1 class="hero-title"></h1>
-                    </div>
-                    <div class="hero-text">
-                        <p>
-
-                        </p>
-                    </div>
-                    <div class="hero-list-container">
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-menu-items">
+                    <a href="#overview" class="nav-link">Overview</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#plans" class="nav-link">Plans</a>
+                    <a href="#location" class="nav-link">Location</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <!--<a href="" class="nav-link" id="contact-link">Contact Us</a> -->
+                </div>
+                <a class="contact-button" id="nav-menu-button" onclick="showContact()">Contact Us
+                </a>
+            </nav>
+        </section>
+        <div class="main-wrapper">
+            <section class="hero" id="hero">
+                <div class="hero-background">
+                    <img src="images/Chateau-Hero.jpeg" alt="">
+                    <div class="hero-background-image-overlay" onclick="openModal();currentSlide(1)"></div>
+                </div>
+                <div class="hero-info-container" onclick="openModal();currentSlide(1)">
+                    <div class="hero-column">
+                        <div class="hero-title">
+                            <h1 class="hero-title-heading">Chateau Du Monte Bella</h1>
+                        </div>
+                        <div class="hero-text">
+                            <p class="text-neutral">
+                                Discover the epitome of refined living – welcome to your dream getaway
+                            </p>
+                        </div>
                         <div class="hero-list">
                             <div class="hero-item">
-                                <img src="" alt="" class="hero-list-icon">
-                                <p class="hero-item-text"></p>
+                                <img src="https://cdn.prod.website-files.com/66017f12a786843635daba91/66018a63d279dea1affb5255_Icon1.svg"
+                                    alt="" class="hero-list-icon">
+                                <p class="hero-item-text text-neutral">Unique Gardens</p>
                             </div>
                             <div class="hero-item">
-                                <img src="" alt="" class="hero-list-icon">
-                                <p class="hero-item-text"></p>
+                                <img src="https://cdn.prod.website-files.com/66017f12a786843635daba91/66018a631a783aff560e9299_Icon2.svg"
+                                    alt="" class="hero-list-icon">
+                                <p class="hero-item-text text-neutral">Scenic Views</p>
                             </div>
                             <div class="hero-item">
-                                <img src="" alt="" class="hero-list-icon">
-                                <p class="hero-item-text"></p>
+                                <img src="https://cdn.prod.website-files.com/66017f12a786843635daba91/66018a63ef0f4e49bde8ee63_Icon3.svg"
+                                    alt="" class="hero-list-icon">
+                                <p class="hero-item-text text-neutral">Wine Cellar</p>
                             </div>
                             <div class="hero-item">
-                                <img src="" alt="" class="hero-list-icon">
-                                <p class="hero-item-text"></p>
+                                <img src="https://cdn.prod.website-files.com/66017f12a786843635daba91/66018a64d58a2e77856a5697_Icon4.svg"
+                                    alt="" class="hero-list-icon">
+                                <p class="hero-item-text text-neutral">Spa Rooms</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </section>
-            <section class="overview">
-            <div class="overview-container">
-                <div class="column">
-                    <h2 class="overview-heading">
-                      GRAND LUXURY: 
-                    </h2>
+            <section class="overview" id="overview">
+                <div class="overview-container">
+                    <div class="column overview-heading-container">
+                        <h2 class="overview-heading">
+                            GRAND LUXURY: YOUR PRIVATE OASIS
+                        </h2>
+                    </div>
+                    <div class="column overview-text-container">
+                        <p class="overview-text">
+                            Set against the backdrop of azure waters, our exclusive villa beckons with a blend of
+                            refinement
+                            and serenity. From the moment you arrive, immerse yourself in the captivating allure of
+                            coastal
+                            living. Indulge in panoramic vistas that stretch to the horizon, promising endless moments
+                            of
+                            awe-inspiring beauty and relaxation.
+                        </p>
+                    </div>
                 </div>
-                <div class="column overview-text-container">
-                    <p class="overview-text">
-                        Set against the backdrop of azure waters, our exclusive villa beckons with a blend of refinement and serenity. From the moment you arrive, immerse yourself in the captivating allure of coastal living. Indulge in panoramic vistas that stretch to the horizon, promising endless moments of awe-inspiring beauty and relaxation. 
-                    </p>
-                </div>
-            </div>
             </section>
-            <section class="about">
-            <div class="about-background">
-                <img src="" alt="" class="about-image">
-            </div>
-            <div class="about-container">
-                <div class="about-right">
+            <section class="about" id="about">
+                <div class="about-background">
+                    <img src="images/Chateau-Gates.webp" alt="" class="about-image" onclick="openModal();currentSlide(2)">
+                </div>
+                <div class="about-container">
                     <div class="about-items">
                         <div class="about-item">
                             <p class="about-item-text">
@@ -106,7 +126,7 @@
                                 Bathrooms
                             </p>
                             <p class="about-item-text about-item-text-right ">
-                            7
+                                7
                             </p>
                         </div>
                         <div class="about-item">
@@ -114,15 +134,15 @@
                                 Square Meterage
                             </p>
                             <p class="about-item-text about-item-text-right ">
-                                12650
+                                12,650
                             </p>
                         </div>
                         <div class="about-item">
                             <p class="about-item-text">
-                                Gararge
+                                Garage
                             </p>
                             <p class="about-item-text about-item-text-right ">
-                            12
+                                12 cars
                             </p>
                         </div>
                         <div class="about-item">
@@ -130,109 +150,110 @@
                                 Floors
                             </p>
                             <p class="about-item-text about-item-text-right ">
-                            4
+                                4
                             </p>
                         </div>
-                       
                     </div>
                 </div>
-                <div class="about-left"></div>
-            </div>
             </section>
-            <section class="section-gallery">
-            <div class="gallery-container">
-                <div class="gallery-title">
-                    <h2 class="gallery-title-heading">
-                        GALLERY
-                    </h2>
-                    <p class="gallery-title-text">
-                        A visual journey through the unique Chateau De Bella
-                    </p>
-                </div>
-                <div class="grid">
+            <section class="section-gallery" id="gallery">
+                <div class="gallery-container">
+                    <div class="gallery-title">
+                        <h2 class="gallery-title-heading">
+                            GALLERY
+                        </h2>
+                        <p class="gallery-title-text">
+                            A visual journey through the unique Chateau De Bella
+                        </p>
+                    </div>
                     <div class="gallery-column">
-                        <div class="gallery-image-container">
-                            <img src="" alt="" class="gallery-item">
+                        <div class="gallery-image-container gallery-image-one">
+                            <img src="images/Chateau-Courtyard.webp" alt="" onclick="openModal();currentSlide(3)" class="gallery-item">
                         </div>
-                        <div class="gallery-image-container">
-                            <img src="" alt="" class="gallery-item">
+                        <div class="gallery-image-container gallery-image-two">
+                            <img src="images/Chateau-Conservatory.webp" alt="" onclick="openModal();currentSlide(4)" class="gallery-item">
                         </div>
-                        <div class="gallery-image-container">
-                            <img src="" alt="" class="gallery-item">
+                        <div class="gallery-image-container gallery-image-three">
+                            <img src="images/Chateau-Pool.webp" alt="" onclick="openModal();currentSlide(5)" class="gallery-item">
                         </div>
-                        <div class="gallery-image-container">
-                            <img src="" alt="" class="gallery-item">
+                        <div class="gallery-image-container gallery-image-four">
+                            <img src="images/Chateau-Ballroom.webp" alt="" onclick="openModal();currentSlide(6)" class="gallery-item">
                         </div>
-                        <div class="gallery-image-container">
-                            <img src="" alt="" class="gallery-item">
+                        <div class="gallery-image-container gallery-image-five">
+                            <img src="images/Chateau-Library.webp" alt="" onclick="openModal();currentSlide(7)" class="gallery-item">
                         </div>
 
                     </div>
+
                 </div>
-            </div>
-            <div class="gallery-container plans-container">
-                <div class="gallery-title">
-                    <h2 class="gallery-title-heading">
-                        PLANS
-                    </h2>
-                    <p class="gallery-title-text">
-                        Explore the history of Chateau De Bella, through gems hidden all over the property to indulge your curiosity.
-                    </p>
-                </div>
-                <div class="grid">
-                    <div class="gallery-column">
-                        <div class="gallery-row">
-                            <div class="gallery-image-container">
-                                <img src="" alt="" class="gallery-item">
-                            </div>
-                            <div class="gallery-image-container">
-                                <img src="" alt="" class="gallery-item">
-                            </div>
-                            <div class="gallery-image-container">
-                                <img src="" alt="" class="gallery-item">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </section>
-            <section class="location">
-            <div class="location-container">
-                <div class="location-background">
-                    
-                </div>
-                <div class="location-info">
-                    <h2 class="loction-title">LOCATION</h2>
-                    <p class="locationo-text">Nestled in serene surroundings, Chateau de Monte Bella invites tranquility with convenient access to nearby amenities. Enveloped by verdant forests and a crystal-clear lake, it serves as a secluded sanctuary for creating unforgettable memories.</p>
-                    <button>Contact Us</button>
-                </div>
-            </div>
-            </section>
-            <section class="features">
-                <div class="features-container">
-                    <div class="features-heading">
-                        <div class="features-title">
-                            <h2>FEATURES</h2>
-                        </div>
-                        <p class="features-text">
-                            Experience coastal luxury at Chateau de Monte Bella, where every feature promises relaxation and opulence.
+            <section class="plans-gallery section-gallery" id="plans">
+                <div class="gallery-container plans-container">
+                    <div class="gallery-title">
+                        <h2 class="gallery-title-heading">
+                            PLANS
+                        </h2>
+                        <p class="gallery-title-text plans-title-text">
+                            Explore the history of Chateau De Bella, through gems hidden all over the property to
+                            indulge
+                            your
+                            curiosity.
                         </p>
                     </div>
-                    <div class="features-image-wrapper">
-                        <img src="" alt="" class="features-image">
+
+                    <div class="gallery-column">
+                        <div class="gallery-image-container plans-image-one">
+                            <img src="images/Chateau-Plans-Exterior-Shaded.jpg" alt="" class="gallery-item" onclick="openModal();currentSlide(8)">
+                        </div>
+                        <div class="gallery-image-container plans-image-two">
+                            <img src="images/Chateau-Plans-Exterior.jpg" alt="" class="gallery-item" onclick="openModal();currentSlide(9)">
+                        </div>
+                        <div class="gallery-image-container plans-image-three">
+                            <img src="images/Chateau-Plans-Floor.jpg" alt="" class="gallery-item" onclick="openModal();currentSlide(10)">
+                        </div>
+
                     </div>
-                    <div class="features-image-wrapper">
-                        <img src="" alt="" class="features-image">
+
+                </div>
+            </section>
+            <section class="location" id="location">
+                <div class="location-container">
+                    <div class="location-title">
+                        <h2>LOCATION</h2>
+                    </div>
+                    <div class="location-info">
+                        <p class="location-text">Nestled in serene surroundings, Chateau de Monte Bella invites
+                            tranquility
+                            with convenient access to nearby amenities. Enveloped by verdant forests and a crystal-clear
+                            lake,
+                            it serves as a secluded sanctuary for creating unforgettable memories.</p>
+                        <a class="contact-button location-button" onclick="showContact()">Contact Us
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="features" id="features">
+                <div class="features-container">
+                    <h2 class="features-text features-title-heading gallery-title-heading">FEATURES</h2>
+                    <p class="features-text gallery-title-text">
+                        Experience coastal luxury at Chateau de Monte Bella, where every feature promises relaxation and
+                        opulence.
+                    </p>
+                    <div class="features-image-wrapper features-image-wrapper-one gallery-image-container">
+                        <img src="images/Chateau-Patio.webp" alt="" class="features-image gallery-item" onclick="openModal();currentSlide(11)">
+                    </div>
+                    <div class="features-image-wrapper features-image-wrapper-two gallery-image-container">
+                        <img src="images/Chateau-Courtyard-02.webp" alt="" class="features-image gallery-item" onclick="openModal();currentSlide(12)">
                     </div>
                     <div class="features-heading">
-                        <p class="features-heading">Interior</p>
+                        <p class="features-heading-text">Interior</p>
                     </div>
-                    <div class="features-item-container">
+                    <div class="features-item-container features-item-container-first">
                         <div class="featured-item">
                             <p class="featured-item-text">Dining Table</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Inclusive Dining Setting</p>
+                            <p class="featured-item-text featured-item-text-right">Inclusive Dining Setting</p>
                         </div>
                     </div>
                     <div class="features-item-container">
@@ -240,7 +261,7 @@
                             <p class="featured-item-text">Built-ins</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Smart Storage Solutions</p>
+                            <p class="featured-item-text featured-item-text-right">Smart Storage Solutions</p>
                         </div>
                     </div>
                     <div class="features-item-container">
@@ -248,7 +269,7 @@
                             <p class="featured-item-text">High Ceilings</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Towering Elegance (5 Meters)</p>
+                            <p class="featured-item-text featured-item-text-right">Towering Elegance (5 Meters)</p>
                         </div>
                     </div>
                     <div class="features-item-container">
@@ -256,7 +277,7 @@
                             <p class="featured-item-text">Automatic System</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Seamless Integration</p>
+                            <p class="featured-item-text featured-item-text-right">Seamless Integration</p>
                         </div>
                     </div>
                     <div class="features-item-container">
@@ -264,18 +285,18 @@
                             <p class="featured-item-text">Wet Bar</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Subterranean Sophistication</p>
+                            <p class="featured-item-text featured-item-text-right">Subterranean Sophistication</p>
                         </div>
                     </div>
                     <div class="features-heading">
-                        <p class="features-heading">Architecture</p>
+                        <p class="features-heading-text">Architecture</p>
                     </div>
-                    <div class="features-item-container">
+                    <div class="features-item-container features-item-container-first">
                         <div class="featured-item">
                             <p class="featured-item-text">Architect Style</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Contemporary Charm</p>
+                            <p class="featured-item-text featured-item-text-right">Contemporary Charm</p>
                         </div>
                     </div>
                     <div class="features-item-container">
@@ -283,18 +304,18 @@
                             <p class="featured-item-text">View</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Nature's Panorama</p>
+                            <p class="featured-item-text featured-item-text-right">Nature's Panorama</p>
                         </div>
                     </div>
                     <div class="features-heading">
-                        <p class="features-heading">Exterior</p>
+                        <p class="features-heading-text">Exterior</p>
                     </div>
-                    <div class="features-item-container">
+                    <div class="features-item-container features-item-container-first">
                         <div class="featured-item">
                             <p class="featured-item-text">Yard</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Expansive Backdrop</p>
+                            <p class="featured-item-text featured-item-text-right">Expansive Backdrop</p>
                         </div>
                     </div>
                     <div class="features-item-container">
@@ -302,7 +323,7 @@
                             <p class="featured-item-text">Gate</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Automated Security</p>
+                            <p class="featured-item-text featured-item-text-right">Automated Security</p>
                         </div>
                     </div>
                     <div class="features-item-container">
@@ -310,67 +331,187 @@
                             <p class="featured-item-text">Security</p>
                         </div>
                         <div class="featured-item">
-                            <p class="featured-item-text">Safety Sentinel (CO, Smoke)</p>
+                            <p class="featured-item-text featured-item-text-right">Safety Sentinel (CO, Smoke)</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="contact">
-            <div class="contact-header">
-                <h2 class="contact-agent">CONTACT AGENT</h2>
-                <p class="agent-header-text">Experience excellence in real estate with our dedicated professionals. Meet the experts who will guide you through every step of the process.</p>
-            </div>
-            <div class="agent-card">
-                <div class="agent-card">
-                    <h3 class="agen-name">Sarah Moon</h3>
-                    <p class="agent-id">Realtor - ID: VIC0028392J2</p>
-                    <p class="about-agent">Introducing Sarah, your dedicated real estate advisor committed to realizing your property dreams. With meticulous attention to detail and a deep dedication to client happiness, Sarah delivers bespoke service crafted specifically for you. Whether you're purchasing, selling, or investing, Sarah is your steadfast companion, guiding you through every stage of the process. Let's transform your real estate aspirations into tangible achievements together.</p>
-                    <div class="agent-button-container">
-                        <button class="contact-agent">Contact Sarah</button>
+            <section class="contact" id="contact">
+                <div class="contact-card">
+                    <div class="contact-agent-title-wrapper">
+                        <h2 class="contact-agent-title">CONTACT AGENT</h2>
+                    </div>
+                    <div class="agent-header-text-wrapper">
+                        <p class="agent-header-text">Experience excellence in real estate with our dedicated
+                            professionals. Meet the experts who will guide you through every step of the process.</p>
+                    </div>
+                    <div class="agent-card-wrapper">
+                        <div class="agent-card">
+                            <h3 class="agent-name">Sarah Moon</h3>
+                            <p class="agent-id">Realtor - ID: VIC0028392J2</p>
+                            <p class="about-agent">Introducing Sarah, your dedicated real estate advisor committed to
+                                realizing
+                                your
+                                property dreams. With meticulous attention to detail and a deep dedication to client
+                                happiness,
+                                Sarah delivers bespoke service crafted specifically for you. Whether you're purchasing,
+                                selling,
+                                or
+                                investing, Sarah is your steadfast companion, guiding you through every stage of the
+                                process.
+                                Let's
+                                transform your real estate aspirations into tangible achievements together.</p>
+                            <div class="agent-button-container">
+                                <a class="contact-button location-button agent-button"  onclick="showContact()">Contact Sarah
+                                </a>
+                            </div>
+                        </div>
+                        <div class="agent-photo">
+                            <img src="images/Agent-Sarah-Moon-Photo.jpeg" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="agent-photo">
-                    <img src="" alt="">
-                </div>
-            </div>
-            </section> 
-        </div>
-        <footer class="footer-section">
-            <div class="container footer">
-                <div class="footer-heading">
+            </section>
+            <footer class="footer-section">
+                <div class="container footer">
                     <a href="" class="footer-brand">
                         <p class="brand-logo-text">Chateau de Monte Bella</p>
                     </a>
-                </div>
-                <div class="footer-menu">
-                    <h5 class="footer-menu-title">Villa Listing</h5>
-                    <a href="" class="footer-link">Overview</a>
-                    <a href="" class="footer-link">Gallery</a>
-                    <a href="" class="footer-link">Plans</a>
-                    <a href="" class="footer-link">Contact</a>
-                    <a href="" class="footer-link">Location</a>
-                    <a href="" class="footer-link">Features</a>
-                </div>
-                <div class="footer-contact">
-                    <h5 class="footer-menu-title">Contact</h5>
-                    <a href="mailto:s-mail: sales@chateau-de-monte-bella.io" class="footer-link">E-mail: sales@chateau-de-monte-bella.io</a>
-                    <a href="tel+33(2)1234-4567" class="footer-link">Phone: +33 (3) 1234-4567</a>
-                    <a href="https://maps.google.com" class="footer-link">Address: 88 Rue de Boisdenier, 37000 Tours, France</a>
-                </div>
-                <div class="footer-info">
-                    <div class="footer-made-with">
-
+                    <div class="footer-menu column">
+                        <h5 class="footer-menu-title">Villa Listing</h5>
+                        <a href="#overview" class="footer-link" id="footer-link">Overview</a>
+                        <a href="#gallery" class="footer-link" id="footer-link">Gallery</a>
+                        <a href="#plans" class="footer-link" id="footer-link">Plans</a>
+                        <a href="#location" class="footer-link" id="footer-link">Location</a>
+                        <a href="#features" class="footer-link" id="footer-link">Features</a>
+                        <a href="#contact" class="footer-link" id="footer-link">Contact</a>
                     </div>
-                    <div class="footer-copywrite">
-                        Made with love by
-                        <a href="" class="footer-ecternal-link">
-                            <strong>DW Designs</strong>
-                        </a>
+                    <div class="footer-contact column">
+                        <h5 class="footer-menu-title">Contact</h5>
+                        <a href="mailto:s-mail: sales@chateau-de-monte-bella.io" class="footer-link">E-mail:
+                            sales@chateau-de-monte-bella.io</a>
+                        <a href="tel+33(2)1234-4567" class="footer-link">Phone: +33 (3) 1234-4567</a>
+                        <a href="https://maps.google.com" class="footer-link">Address: 88 Rue de Boisdenier, 37000
+                            Tours,
+                            France</a>
+                    </div>
+                    <div class="footer-info column">
+                        <div class="footer-made-with">
+                        </div>
+                        <div class="footer-copywrite">
+                            Made with love by:
+                            <a href="" class="footer-external-link">
+                                DW Designs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!--Image Gallery Modal / Lightbox-->
+            <div class="modal" id="myModal">
+                <span class="close" id="closeButton" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <div class="modal-gallery">
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Hero.jpeg" alt="Front Facade" class="slide-image property-image" id="facadeImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Gates.webp" alt="Main Gates" class="slide-image property-image" id="mainGatesImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Courtyard.webp" alt="Courtyard" class="slide-image property-image"  id="courtyardImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Conservatory.webp" alt="Conservatory" class="slide-image property-image" id="conservatoryImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide" id="poolImageContainer">
+                            <img src="images/Chateau-Pool.webp" alt="Pool" class="slide-image property-image" id="poolImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Ballroom.webp" alt="Ballroom" class="slide-image property-image" id="ballroomImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Library.webp" alt="Library" class="slide-image property-image" id="libraryImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Plans-Exterior-Shaded.jpg" alt="Facade Dimensions" class="slide-image property-image" id="facadeDimensionsImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Plans-Exterior.jpg" alt="Facade Blueprint" class="slide-image property-image" id="facadeBlurprintImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Plans-Floor.jpg" alt="Floor Plans" class="slide-image property-image" id="floorPlansImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Patio.webp" alt="Patio" class="slide-image property-image" id="patioImage" onclick="toggleImageSize(this.id)">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/Chateau-Courtyard-02.webp" alt="Rear Courtyard" class="slide-image property-image" id="rearCortyardImage" onclick="toggleImageSize(this.id)">
+                        </div>
+
+
+                        <!-- Next/previous controls -->
+                        <a class="prev" id="prev-button" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" id="next-button" onclick="plusSlides(1)">&#10095;</a>
+
+                        <!-- Caption text -->
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
 
+            <div class="contact-modal" id="contactModal">
+                <span class="close" id="closeContactButton" onclick="hideContact()">&times;</span>
+                <div class="contact-modal-form-container">
+                    <div class="contact-modal-form-header">
+                        <h2 id="contactModalHeaderText">Contact Us</h2>
+                        <a href="mailto:s-mail: sales@chateau-de-monte-bella.io" class="contact-modal-link">E-mail:
+                            sales@chateau-de-monte-bella.io</a>
+                        <a href="tel+33(2)1234-4567" class="contact-modal-link">Phone: +33 (3) 1234-4567</a>
+                        <a href="https://maps.google.com" class="contact-modal-link">
+                            Address: 88 Rue de Boisdenier, 37000 Tours, France</a>
+                    </div>
+                    <form action="" class="contact-form" id="contactForm">
+                        <div class="form">
+                            <div class="contact-item-wrapper contact-item-left" id="nameWrapper">
+                                <label for="name" class="ontact-form-label">Name:</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name*" required>
+                            </div>
+                            <div class="contact-item-wrapper contact-item-left" id="phoneWrapper">
+                                <label for="phoneNum" class="ontact-form-label">Phone:</label>
+                                <input type="tel" id="phoneNum" name="phoneNum" placeholder="Your Phone*" required>
+                            </div>
+                            <div class="contact-item-wrapper contact-item-left" id="emailWrapper">
+                                <label for="email" class="ontact-form-label">E-mail:</label>
+                                <input type="email" id="email" name="email" placeholder="Your e-mail*" required>
+                            </div>
+                            <div class="contact-item-wrapper contact-item-left" id="reasonWrapper">
+                                <label for="reason" class="ontact-form-label">Reason:</label>
+                                <select name="reason" id="reason">
+                                    <option value="" selected disabled class="placeholder-option">This enquiry is regarding:</option>
+                                    <option value="This">This specific property</option>
+                                    <option value="Sell">I am looking to sell a property</option>
+                                    <option value="Buy">I am looking to buy a property</option>
+                                </select>
+                            </div>
+                            <div class="contact-item-wrapper contact-item-right" id="msgWrapper">
+                                <label for="msg"></label>
+                                <textarea name="msg" id="msg" placeholder="Please type your message here..."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-submit-button-wrapper">
+                            <input type="submit" value="Send Message" id="formSubmitButton" class="contact-button" onclick="hideContact()">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
 </body>
+
 </html>
