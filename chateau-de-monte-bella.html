@@ -47,7 +47,7 @@
                 <div class="hero-info-container" onclick="openModal();currentSlide(1)">
                     <div class="hero-column">
                         <div class="hero-title">
-                            <h1 class="hero-title-heading">Chateau Du Monte Bella</h1>
+                            <h1 class="hero-title-heading" id="heroTitle">Chateau Du Monte Bella</h1>
                         </div>
                         <div class="hero-text">
                             <p class="text-neutral">
@@ -499,29 +499,33 @@
                         <a href="https://maps.google.com" class="contact-modal-link">
                             Address: 88 Rue de Boisdenier, 37000 Tours, France</a>
                     </div>
-                    <form action="" class="contact-form" id="contactForm">
+                    <form action="" class="contact-form" id="contactForm" onsubmit="return formValidation()">
                         <div class="form">
                             <div class="contact-item-wrapper contact-item-left" id="nameWrapper">
-                                <label for="name" class="ontact-form-label">Name:</label>
-                                <input type="text" id="name" name="name" placeholder="Your Name*" required>
+                                <label for="name" class="contact-form-label">Name:</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name*" class="">
+                                <p id="nameError" class="error-msg">Please enter your name</p>
                             </div>
                             <div class="contact-item-wrapper contact-item-left" id="phoneWrapper">
                                 <label for="phoneNum" class="ontact-form-label">Phone:</label>
-                                <input type="tel" id="phoneNum" name="phoneNum" placeholder="Your Phone*" required>
+                                <input type="tel" id="phoneNum" name="phoneNum" placeholder="Your Phone*">
+                                <p id="phoneError" class="error-msg">Please enter a valid phone number in teh format of xxxx xxx xxx or xx xxxx xxx</p>
                             </div>
                             <div class="contact-item-wrapper contact-item-left" id="emailWrapper">
                                 <label for="email" class="ontact-form-label">E-mail:</label>
-                                <input type="email" id="email" name="email" placeholder="Your e-mail*" required>
+                                <input type="email" id="email" name="email" placeholder="Your e-mail*">
+                                <p id="emailError" class="error-msg">Please enter a valid e-mail</p>
                             </div>
                             <div class="contact-item-wrapper contact-item-left" id="reasonWrapper">
                                 <label for="reason" class="ontact-form-label">Reason:</label>
                                 <select name="reason" id="reason">
                                     <option value="" selected disabled class="placeholder-option">This enquiry is
                                         regarding:</option>
-                                    <option value="This">This specific property</option>
-                                    <option value="Sell">I am looking to sell a property</option>
-                                    <option value="Buy">I am looking to buy a property</option>
+                                    <option value="This property">This specific property</option>
+                                    <option value="I wish to sell a property">I am looking to sell a property</option>
+                                    <option value="I am looking to buy a property">I am looking to buy a property</option>
                                 </select>
+                                <p id="reasonError" class="error-msg">Please make a selection to what your enquiry is regarding.</p>
                             </div>
                             <div class="contact-item-wrapper contact-item-right" id="msgWrapper">
                                 <label for="msg"></label>
@@ -530,7 +534,7 @@
                         </div>
                         <div class="form-submit-button-wrapper">
                             <input type="submit" value="Send Message" id="formSubmitButton" class="contact-button"
-                                onclick="hideContact()">
+                                onclick="">
                         </div>
 
                     </form>

@@ -235,7 +235,8 @@ p {
 }
 
 .contact-item-wrapper input,
-.contact-item-wrapper select {
+.contact-item-wrapper select,
+.contact-item-wrapper p {
     grid-column-start: 3;
     grid-column-end: span 7;
 }
@@ -258,6 +259,21 @@ p {
     grid-column-start: 4;
     grid-column-end: span 6;
 }
+
+.error {
+    border: #c72c2c 2px solid;
+}
+
+.error-msg {
+    display: none;
+    margin: 0;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+
+
 
 
 .navigation {
@@ -834,6 +850,9 @@ p {
     position: relative;
 }
 
+.footer-brand {
+    text-decoration: none;
+}
 
 .brand-logo-text {
     color: #f9f9f9;
@@ -1106,6 +1125,7 @@ p {
         grid-row-end: 2;
         grid-column-start: 1;
         grid-column-end: 13;
+        
     }
 
     .footer-menu {
@@ -1431,6 +1451,7 @@ p {
 
     .brand-logo-text {
         margin: 0;
+        text-decoration: none;
     }
 
     .footer-menu {

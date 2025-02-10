@@ -96,8 +96,6 @@ function showSlides(n) {
     images[i].className = images[i].className.replace(" active", "");
   }
   // Set image to display
-  console.log("slide index = " + slideIndex);
-  console.log("slides length = " + slides.length);
   slides[slideIndex - 1].style.display = "block"
   captionText.innerHTML = images[slideIndex - 1].alt;
 
@@ -136,3 +134,111 @@ function hideContact() {
 }
 
 
+// Contact form validation
+let contactFrom = document.getElementById("contactForm");
+let fname = document.getElementById("name");
+let nameErrorText = document.getElementById("nameError");
+let pnumber = document.getElementById("phoneNum");
+let pnumtext = document.getElementById("phoneError");
+let email = document.getElementById("email");
+
+
+//Name
+function nameValidation() {
+  let fname = document.getElementById("name");
+  let nameErrorText = document.getElementById("nameError");
+  let nameRegex = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s?)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
+
+  if (fname.value.match(nameRegex) && fname.value.length > 0 && fname.value.trim() != "") {
+    console.log(`Contact name is: ${fname.value}`);
+    fname.classList.remove("error");
+    nameErrorText.style.display = "none";
+    return true
+  } else {
+    console.log("name invalid");
+    fname.classList.add("error");
+    nameErrorText.style.display = "block";
+    return false
+  }
+}
+
+//Phone
+function phoneValidation() {
+let pnumber = document.getElementById("phoneNum");
+let pnumtext = document.getElementById("phoneError");
+let phoneregm = /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+let phonereg = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+
+  if (pnumber.value.match(phonereg) || pnumber.value.match(phoneregm)) {
+    console.log(`Contact phone number is: ${pnumber.value}`);
+    pnumber.classList.remove("error");
+    pnumtext.style.display = "none";
+    return true
+  } else {
+    console.log("phone is not valid");
+    pnumber.classList.add("error");
+    pnumtext.style.display = "block";
+    return false
+  }
+}
+
+//e-mail
+function emailValidation() {
+  let email = document.getElementById("email");
+  let emailtext = document.getElementById("emailError");
+  let emailreg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  if (email.value.match(emailreg)){
+    console.log(`Contact email address is: ${email.value}`);
+    email.classList.remove("error");
+    emailtext.style.display = "none";
+    return true
+  } else {
+    console.log("email is not valid");
+    email.classList.add("error");
+    emailtext.style.display = "block";
+    return false
+  }
+}
+
+//Enquiry Reason
+function enquiryValidation() {
+  let reason = document.getElementById("reason");
+  let reasonError = document.getElementById("reasonError");
+
+  if (reason.value != "") {
+    console.log(`Enquiry is regarding: ${reason.value}`);
+    reason.classList.remove("error");
+    reasonError.style.display = "none";
+    return true
+  } 
+  else {
+    console.log("reason not given");
+    reason.classList.add("error");
+    reasonError.style.display = "block";
+    return false
+  }
+}
+
+function formReset() {
+  document.getElementById("contactForm").reset();
+  hideContact();
+}
+
+function formValidation(event) {
+  console.log("button clicked");
+  nameValidation();
+  phoneValidation();
+  emailValidation();
+  enquiryValidation();
+
+  if (nameValidation() && phoneValidation() && emailValidation() && enquiryValidation()) {
+      console.log("form validation success");
+      //formReset();
+      
+  } else {
+    
+    console.log("form validation failed");
+    return false
+  }
+}
